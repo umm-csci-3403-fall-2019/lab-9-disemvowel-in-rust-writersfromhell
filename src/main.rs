@@ -6,6 +6,17 @@ fn main() {
     println!("s was '{}', and without vowels is '{}'.", s, s_disemvowel);
 }
 
+fn disemvowel(s: &str) -> String {
+    let mut output: Vec<char> = Vec::new();
+    let vowels = vec!['a', 'e', 'i', 'o', 'u'];
+    for c in s.chars() {
+        if ! vowels.contains(&c.to_ascii_lowercase()){
+            output.push(c);
+        }
+    }
+    output.iter().collect()
+}
+
 // Everything from here down is Rust test code. You shouldn't need to 
 // change any of this. 
 //
